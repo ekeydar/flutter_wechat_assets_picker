@@ -294,6 +294,8 @@ class DefaultAssetPickerProvider
     // Merge user's filter option into base options if it's not null.
     if (filterOptions != null) {
       options.merge(filterOptions!);
+      options.createTimeCond = filterOptions.createTimeCond;
+      options.updateTimeCond = filterOptions.updateTimeCond;
     }
 
     final List<AssetPathEntity> _list = await PhotoManager.getAssetPathList(
